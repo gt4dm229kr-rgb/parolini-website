@@ -1,17 +1,15 @@
 import Hero from '@/components/Hero';
-import Services from '@/components/Services';
-import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Services from '@/components/Services';
 import Contact from '@/components/Contact';
 
 export default function Home() {
-return (
-  <main>
-    <Hero />
-    <About />
-    <Services />
-    <Contact />
-  </main>
-)
+  return (
+    <main className="min-h-screen bg-white">
+      <Hero />
+      <About />
+      <Services />
+      <Contact />
+    </main>
+  );
 }
