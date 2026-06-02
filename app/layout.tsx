@@ -1,3 +1,4 @@
+import './globals.css';
 'use client';
 import { useState } from 'react';
 import { personalInfo } from '@/data/content';
