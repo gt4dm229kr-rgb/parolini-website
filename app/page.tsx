@@ -1,370 +1,282 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Dott. Federico Parolini | Oculistica e Retina Medica a Padova',
+  description: 'Medico Chirurgo in Oftalmologia. Valutazioni oculistiche e ricerca scientifica avanzata sulla retina medica a Padova.',
+};
 
 export default function Home() {
   return (
-    <main className="min-h-screen font-sans antialiased text-slate-700 bg-stone-50/60 selection:bg-cyan-800 selection:text-white">
+    <div className="min-h-screen bg-[#FCFBF9] text-[#1E252B] font-sans antialiased selection:bg-[#2A524A] selection:text-white">
       
-      {/* 1. HEADER FISSO E ISTITUZIONALE */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200/80 h-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="text-2xl font-bold text-blue-950 tracking-tight">Dott. Federico Parolini</span>
-            <span className="text-xs text-cyan-700 font-semibold uppercase tracking-wider mt-0.5">Medico Chirurgo | Oftalmologia</span>
+      {/* HEADER EDITORIALE */}
+      <header className="fixed top-0 w-full bg-[#FCFBF9]/90 backdrop-blur-md z-50 border-b border-[#EAE5DC]">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex justify-between items-center h-24">
+            <div className="flex flex-col">
+              <span className="font-serif text-xl font-semibold text-[#0F1A2C] tracking-wide">Dott. Federico Parolini</span>
+              <span className="text-[10px] text-[#8C704B] font-semibold uppercase tracking-widest mt-0.5">Medico Chirurgo · Oftalmologia</span>
+            </div>
+            <nav className="hidden md:flex gap-10 text-xs font-semibold uppercase tracking-wider text-[#5C646C]">
+              <a href="#visione" className="hover:text-[#2A524A] transition-colors">Visione</a>
+              <a href="#aree" className="hover:text-[#2A524A] transition-colors">Aree Cliniche</a>
+              <a href="#profilo" className="hover:text-[#2A524A] transition-colors">Profilo</a>
+              <a href="#ricerca" className="hover:text-[#2A524A] transition-colors">Ricerca</a>
+            </nav>
+            <a href="#contatti" className="hidden md:inline-flex bg-[#0F1A2C] text-[#FCFBF9] px-5 py-2.5 text-xs font-semibold uppercase tracking-widest hover:bg-[#2A524A] transition-colors">
+              Contatti
+            </a>
           </div>
-          <nav className="hidden lg:flex gap-8 text-sm font-medium text-slate-600">
-            <a href="#profilo" className="hover:text-cyan-700 transition-colors">Profilo Professionale</a>
-            <a href="#percorso" className="hover:text-cyan-700 transition-colors">Il mio percorso</a>
-            <a href="#interessi-clinici" className="hover:text-cyan-700 transition-colors">Aree di Interesse</a>
-            <a href="#ricerca-scientifica" className="hover:text-cyan-700 transition-colors">Ricerca Scientifica</a>
-            <a href="#contatti" className="hover:text-cyan-700 transition-colors">Contatti</a>
-          </nav>
-          <a href="#contatti" className="inline-flex bg-blue-950 text-white px-6 py-3 rounded-xl text-sm font-medium hover:bg-cyan-800 transition-all shadow-sm">
-            Richiedi informazioni
-          </a>
         </div>
       </header>
 
-      {/* 2. HERO SECTION */}
-      <section className="pt-36 pb-20 lg:pt-48 lg:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-blue-950 leading-tight tracking-tight">
-              Oculistica clinica e <br />
-              <span className="text-cyan-700">retina medica a Padova</span>
-            </h1>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-              Valutazioni oculistiche accurate con particolare attenzione a maculopatie, retinopatia diabetica, degenerazione maculare e imaging OCT/OCT-A.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
-              <a href="#contatti" className="inline-flex justify-center items-center bg-blue-950 text-white px-6 py-3.5 rounded-xl text-sm font-medium hover:bg-cyan-800 transition shadow-md">
-                Richiedi informazioni per una visita
-              </a>
-              <a href="#profilo" className="inline-flex justify-center items-center bg-white text-blue-950 border border-stone-200 px-6 py-3.5 rounded-xl text-sm font-medium hover:bg-stone-50 transition shadow-sm">
-                Scopri il profilo professionale
-              </a>
-            </div>
-            
-            {/* Trust Badges Originari */}
-            <div className="pt-6 border-t border-stone-200 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left text-xs text-slate-500 font-medium">
-              <div>• Laurea in Medicina e Chirurgia con lode</div>
-              <div>• Formazione specialistica in Oftalmologia, Università di Padova</div>
-              <div>• European Board of Ophthalmology Diploma 2026</div>
-            </div>
-          </div>
-          
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-xs aspect-[4/5] rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 bg-stone-100">
-              <img src="/portrait.jpg" alt="Dott. Federico Parolini" className="w-full h-full object-cover object-top" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. NUOVA SEZIONE: PROFILO PROFESSIONALE (A DUE COLONNE) */}
-      <section id="profilo" className="py-24 bg-white border-y border-stone-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
-            {/* COLONNA SINISTRA: FOTO STRUMENTAZIONE E CARD SOVRAPPOSTA */}
-            <div className="lg:col-span-5 space-y-6 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3] lg:aspect-[3/4] bg-stone-900">
-                <img 
-                  src="OTTICA-BONORA-Ferrara-001-640w.webp" 
-                  alt="Strumentazione diagnostica oftalmologica" 
-                  className="w-full h-full object-cover opacity-85 filter contrast-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-blue-950/20 to-transparent"></div>
-              </div>
-              
-              {/* Card Sovrapposta Istituzionale */}
-              <div className="bg-stone-50 border border-stone-200 p-6 rounded-xl shadow-md space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-blue-950">Dott. Federico Parolini</h3>
-                  <p className="text-sm font-medium text-cyan-700 mt-0.5">Medico Chirurgo</p>
-                  <p className="text-xs text-slate-500 mt-1">Formazione specialistica in Oftalmologia, Università di Padova</p>
-                </div>
-                
-                {/* Piccoli Badge Tematici */}
-                <div className="flex flex-wrap gap-2 pt-2 border-t border-stone-200">
-                  {["Retina medica", "OCT / OCT-A", "Imaging multimodale", "Ricerca clinica"].map((badge, bIdx) => (
-                    <span key={bIdx} className="bg-white px-2.5 py-1 rounded-md text-[11px] font-medium text-slate-600 border border-stone-200 shadow-2xs">
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* COLONNA DESTRA: TITOLO, TESTO VERBATIM E CARDS INTEGRATE DAL CV */}
-            <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-cyan-700 block">Profilo Clinico e Accademico</span>
-                <h2 className="text-3xl font-bold text-blue-950 tracking-tight leading-tight">
-                  Un profilo clinico e scientifico orientato alla retina medica e all’imaging diagnostico
-                </h2>
-              </div>
-
-              <div className="space-y-4 text-slate-600 leading-relaxed font-light text-base text-justify">
-                <p>
-                  Il Dott. Federico Parolini è Medico Chirurgo e svolge la propria formazione specialistica in Oftalmologia presso l’Università di Padova, all’interno dell’Unità Operativa di Oculistica del Dipartimento di Neuroscienze.
-                </p>
-                <p>
-                  La sua attività clinica si sviluppa in ambito ambulatoriale, ospedaliero e di urgenza, con esperienza nella valutazione di pazienti affetti da patologie oculari acute e croniche. Nel percorso quotidiano si occupa di visita oculistica, biomicroscopia alla lampada a fessura, tonometria, valutazione del fundus oculi e interpretazione di esami di imaging retinico.
-                </p>
-                <p>
-                  Un interesse centrale del suo percorso è rappresentato dalla retina medica, con particolare attenzione alla degenerazione maculare legata all’età, all’atrofia geografica, alla retinopatia diabetica, alle patologie vascolari retiniche, alle malattie ereditarie della retina e alla malattia di Von Hippel-Lindau.
-                </p>
-                <p>
-                  La formazione presso l’Università di Padova gli ha permesso di approfondire l’utilizzo dell’imaging multimodale, tra cui OCT, OCT-A e imaging ultra-widefield, strumenti fondamentali per l’inquadramento diagnostico e il follow-up delle principali patologie retiniche.
-                </p>
-                <p>
-                  Accanto all’attività clinica, il Dott. Parolini è coinvolto in progetti di ricerca dedicati sullo studio dei biomarcatori retinici, con particolare interesse per i piccoli foci iper-riflettenti retinici come possibile espressione di attivazione cellulare e neuroinfiammazione nell’atrofia geografica. La sua attività scientifica include pubblicazioni e contributi congressuali nazionali e internazionali nell’ambito della retina medica e dell’imaging oftalmologico.
-                </p>
-                <p>
-                  Il suo approccio alla visita unisce attenzione clinica, interpretazione accurata degli esami diagnostici e comunicazione chiara con il paziente, con l’obiettivo di costruire percorsi di valutazione e monitoraggio personalizzati.
-                </p>
-              </div>
-
-              {/* Le 3 Sotto-Card Formative/Scientifiche */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
-                <div className="bg-stone-50 border border-stone-200/60 p-5 rounded-xl space-y-2">
-                  <h4 className="font-bold text-sm text-blue-950">Formazione universitaria</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed">
-                    Laurea in Medicina e Chirurgia con lode presso l’Università degli Studi di Brescia e formazione specialistica in Oftalmologia presso l’Università di Padova.
-                  </p>
-                </div>
-                <div className="bg-stone-50 border border-stone-200/60 p-5 rounded-xl space-y-2">
-                  <h4 className="font-bold text-sm text-blue-950">Retina medica e imaging</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed">
-                    Interesse clinico per maculopatie, retinopatia diabetica, atrofia geografica, patologie vascolari retiniche, OCT, OCT-A e imaging multimodale.
-                  </p>
-                </div>
-                <div className="bg-stone-50 border border-stone-200/60 p-5 rounded-xl space-y-2">
-                  <h4 className="font-bold text-sm text-blue-950">Ricerca scientifica</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed">
-                    Attività dedicata allo studio dei biomarcatori retinici e dei foci iper-riflettenti nell’atrofia geografica e nelle patologie degenerative della retina.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 4. SEZIONE: IL MIO PERCORSO (TIMELINE VERTICALE ELEGANTE) */}
-      <section id="percorso" className="py-24 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-blue-950 tracking-tight">Tappe della Formazione Clinica</h2>
-          <p className="text-sm text-slate-500 font-light mt-2">Sintesi del percorso accademico, ospedaliero e dei corsi specialistici avanzati.</p>
-        </div>
+      <main className="pt-24">
         
-        <div className="relative border-l border-stone-200 ml-4 md:ml-32 space-y-12">
-          {[
-            { tag: "2022", title: "Laurea in Medicina e Chirurgia", text: "Conseguimento del titolo con votazione 110/110 e lode presso l’Università degli Studi di Brescia, con annessa partecipazione al programma di eccellenza del Collegio Universitario di Merito L. Lucchini." },
-            { tag: "Dal 2022", title: "Formazione specialistica in Oftalmologia", text: "Attività clinica a tempo pieno presso l’Unità Operativa di Oculistica dell'Università di Padova. Gestione dei reparti, degli ambulatori e delle urgenze in regime di guardia e pronta disponibilità." },
-            { tag: "Retina medica", title: "Approfondimento diagnostico e clinico", text: "Focus mirato sulla diagnostica retinica avanzata, screening della retinopatia diabetica (sotto la guida del Prof. E. Midena) e monitoraggio delle maculopatie ereditarie e senili (sotto la supervisione della Prof.ssa E. Pilotto)." },
-            { tag: "Ricerca", title: "Analisi dei biomarcatori OCT", text: "Studio strutturale e in vivo della microglia residente e dei foci iper-riflettenti retinici come indici di neuroinfiammazione nell'atrofia geografica avanzata." },
-            { tag: "Formazione avanzata", title: "Corsi pratici e simulazione microchirurgica", text: "Frequenza della Venice Ophthalmology Summer School (VOSS 2025) e superamento dei corsi avanzati di simulazione Drylab e Wetlab in Microchirurgia Oculare dedicati alla chirurgia vitreoretinica e della cataratta complessa presso la Humanitas University di Milano (2025)." }
-          ].map((timeItem, tIdx) => (
-            <div key={tIdx} className="relative pl-8 group">
-              {/* Nodo temporale */}
-              <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 border-cyan-700 bg-white group-hover:bg-cyan-700 transition-colors"></div>
-              {/* Etichetta anno/ambito a sinistra su desktop */}
-              <div className="md:absolute md:right-[102%] md:top-1 md:w-28 text-left md:text-right font-mono font-bold text-xs text-cyan-700 uppercase tracking-wider mb-1 md:mb-0">
-                {timeItem.tag}
-              </div>
-              <div className="bg-white p-6 rounded-xl border border-stone-200/60 shadow-2xs space-y-1">
-                <h3 className="text-lg font-bold text-blue-950">{timeItem.title}</h3>
-                <p className="text-sm text-slate-600 font-light leading-relaxed">{timeItem.text}</p>
+        {/* HERO SECTION - TIPOGRAFIA EQUILIBRATA E ICONOGRAFIA RETINICA NATURALE */}
+        <section className="py-16 lg:py-24 border-b border-[#EAE5DC]">
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
+            
+            <div className="lg:col-span-8 space-y-6">
+              <span className="text-xs font-bold text-[#8C704B] uppercase tracking-widest block">
+                Padova · Università degli Studi di Padova
+              </span>
+              <h1 className="font-serif text-4xl lg:text-5xl font-light text-[#0F1A2C] leading-[1.2] tracking-wide">
+                Studio clinico della <br />
+                <span className="italic text-[#2A524A]">retina medica</span> e della visione.
+              </h1>
+              <p className="text-base text-[#5C646C] font-light leading-relaxed max-w-xl">
+                Attività medica e di ricerca focalizzata sulle patologie maculari, la retinopatia diabetica e l'interpretazione diagnostica avanzata tramite imaging multimodale (OCT e OCT-A).
+              </p>
+              <div className="pt-2">
+                <a href="#contatti" className="inline-block border-b border-[#0F1A2C] pb-1 text-xs font-bold uppercase tracking-widest text-[#0F1A2C] hover:text-[#2A524A] hover:border-[#2A524A] transition-all">
+                  Richiedi informazioni →
+                </a>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 5. SEZIONE: AREE DI INTERESSE CLINICO (GRIGLIA CON IMMAGINI ALTERNATE) */}
-      <section id="interessi-clinici" className="py-24 bg-stone-100/50 border-y border-stone-200/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl font-bold text-blue-950 tracking-tight">Ambiti di Approfondimento Clinico</h2>
-            <p className="text-sm text-slate-500 font-light mt-2">Attività ambulatoriale quotidiana e diagnostica multimodale d'avanguardia.</p>
-          </div>
-
-          <div className="space-y-16">
-            {/* Blocco 1: Retina Medica */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-sm aspect-video lg:aspect-4/3">
-                <img src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=600&q=80" alt="Retina medica" className="w-full h-full object-cover filter saturate-75" />
-              </div>
-              <div className="lg:col-span-7 space-y-3 lg:pl-6">
-                <h3 className="text-2xl font-bold text-blue-950">Retina medica</h3>
-                <p className="text-base text-slate-600 font-light leading-relaxed">
-                  Valutazione e monitoraggio delle principali patologie della retina, con particolare attenzione a maculopatie, degenerazione maculare, atrofia geografica e patologie vascolari retiniche.
-                </p>
+            
+            {/* Elemento Grafico Scientifico Nativo - Sostituisce la vecchia foto zoomata */}
+            <div className="lg:col-span-4 flex justify-center lg:justify-end">
+              <div className="w-56 h-56 bg-[#F5F2EB] rounded-full border border-[#EAE5DC] flex items-center justify-center p-6 relative group">
+                {/* Minimalist Vector Retina/Lens Diagram */}
+                <svg className="w-full h-full text-[#8C704B]/40 stroke-1" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                  <circle cx="50" cy="50" r="40" strokeDasharray="2 2" />
+                  <circle cx="50" cy="50" r="25" />
+                  <circle cx="50" cy="50" r="8" className="text-[#2A524A]/60" />
+                  <line x1="50" y1="0" x2="50" y2="100" />
+                  <line x1="0" y1="50" x2="100" y2="50" />
+                  <path d="M20,20 Q50,40 80,20" />
+                  <path d="M20,80 Q50,60 80,80" />
+                </svg>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-[9px] font-mono uppercase tracking-widest text-[#5C646C] bg-[#FCFBF9] px-2 py-0.5 border border-[#EAE5DC]">Focus Optic</span>
+                </div>
               </div>
             </div>
 
-            {/* Blocco 2: Retinopatia Diabetica */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center lg:flex-row-reverse">
-              <div className="lg:col-span-5 lg:order-2 rounded-2xl overflow-hidden shadow-sm aspect-video lg:aspect-4/3">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Retinopatia Diabetica Screening" className="w-full h-full object-cover filter saturate-75" />
+          </div>
+        </section>
+
+        {/* SEZIONE FILOSOFIA (IL MANIFESTO) */}
+        <section id="visione" className="py-16 bg-[#F5F2EB]/40 border-b border-[#EAE5DC]">
+          <div className="max-w-3xl mx-auto px-6 text-center space-y-4">
+            <span className="text-[10px] font-bold text-[#8C704B] uppercase tracking-widest block">L'Approccio Clinico</span>
+            <blockquote className="font-serif text-xl lg:text-2xl italic text-[#0F1A2C] font-light leading-relaxed">
+              "L’evoluzione dell’imaging retinico oggi ci permette di osservare alterazioni microscopiche prima invisibili. Il nostro obiettivo è tradurre questo progresso tecnologico in una valutazione clinica chiara, rigorosa e centrata sulle necessità del paziente."
+            </blockquote>
+          </div>
+        </section>
+
+        {/* AREE CLINICHE - COMPATTE, PULITE, SENZA GRIGLIE STRANE */}
+        <section id="aree" className="py-20 border-b border-[#EAE5DC]">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-12 border-b border-[#EAE5DC] pb-4">
+              <h2 className="font-serif text-2xl font-light text-[#0F1A2C]">Ambiti di approfondimento clinico</h2>
+              <p className="text-xs text-[#8C704B] font-semibold uppercase tracking-wider mt-1 md:mt-0">Attività e Valutazioni</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
+              {[
+                { n: "01", t: "Maculopatie e Degenerazione Maculare", d: "Inquadramento e monitoraggio delle patologie a carico della macula, con focus sulle forme iniziali e avanzate (Atrofia Geografica)." },
+                { n: "02", t: "Retinopatia Diabetica", d: "Screening e monitoraggio delle alterazioni vascolari retiniche legate alle complicanze del diabete mellito." },
+                { n: "03", t: "Imaging Diagnostico Avanzato", d: "Analisi morfologica e strutturale mediante Tomografia a Coerenza Ottica (OCT) e Angiografia-OCT (OCT-A)." },
+                { n: "04", t: "Patologie Vascolari della Retina", d: "Diagnostica clinica applicata alle occlusioni venose, arteriose e alle microangiopatie retiniche." },
+                { n: "05", t: "Malattie Retiniche Ereditarie", d: "Studio e follow-up clinico-strumentale di distrofie retiniche e condizioni rare (es. malattia di Von Hippel-Lindau)." },
+                { n: "06", t: "Valutazione Oculistica Generale", d: "Esame completo della salute oculare, prevenzione e screening dei vizi refrattivi e della pressione intraoculare." }
+              ].map((area, idx) => (
+                <div key={idx} className="space-y-2 border-l border-[#EAE5DC] pl-4">
+                  <span className="block font-mono text-xs text-[#8C704B] font-medium">{area.n}</span>
+                  <h3 className="font-serif text-base text-[#0F1A2C] font-medium">{area.t}</h3>
+                  <p className="text-xs text-[#5C646C] font-light leading-relaxed">{area.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PROFILO PROFESSIONALE - PROPORZIONI CORRETTE E CORNICI DISTINTE */}
+        <section id="profilo" className="py-20 bg-[#FAF9F5]">
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Foto o Box Grafico contenitivo: ora è piccolo, protetto e non deforma nulla */}
+            <div className="lg:col-span-4 space-y-4">
+              <div className="w-full max-w-[240px] mx-auto lg:mx-0 aspect-[3/4] bg-[#F5F2EB] border border-[#EAE5DC] p-2 flex items-center justify-center">
+                {/* Se usi una foto reale, non verrà MAI zoomata grazie a object-contain e max-w */}
+                <div className="w-full h-full border border-[#EAE5DC]/60 flex items-center justify-center bg-white">
+                  <svg className="w-12 h-12 text-[#8C704B]/30 stroke-1" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                  </svg>
+                </div>
               </div>
-              <div className="lg:col-span-7 lg:order-1 space-y-3 lg:pr-6">
-                <h3 className="text-2xl font-bold text-blue-950">Retinopatia diabetica</h3>
-                <p className="text-base text-slate-600 font-light leading-relaxed">
-                  Interesse specifico per lo screening, la stadiazione e il follow-up della retinopatia diabetica, anche attraverso imaging retinico multimodale.
-                </p>
+              <div className="text-center lg:text-left">
+                <h3 className="font-serif text-lg text-[#0F1A2C]">Dott. Federico Parolini</h3>
+                <p className="text-[11px] text-[#8C704B] font-medium uppercase tracking-wider mt-0.5">Medico Chirurgo</p>
               </div>
             </div>
 
-            {/* Blocco 3: OCT / OCT-A - Utilizzo di blog-image-23-1024x576.webp */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-5 rounded-2xl overflow-hidden shadow-sm aspect-video lg:aspect-4/3 bg-stone-200">
-                <img src="blog-image-23-1024x576.webp" alt="Paziente all'esame della lampada a fessura e diagnostica per immagini" className="w-full h-full object-cover" />
+            <div className="lg:col-span-8 space-y-10">
+              <div>
+                <span className="text-[10px] font-bold text-[#8C704B] uppercase tracking-widest block mb-1">Biografia Professionale</span>
+                <h2 className="font-serif text-2xl font-light text-[#0F1A2C] mb-4">Percorso Accademico e Assistenziale</h2>
+                <div className="text-xs text-[#5C646C] font-light space-y-3 leading-relaxed">
+                  <p>Laureato in Medicina e Chirurgia con lode presso l’Università degli Studi di Brescia nel 2022, il Dott. Parolini ha focalizzato i suoi interessi clinici sulla gestione della retina medica.</p>
+                  <p>Attualmente svolge la sua attività assistenziale e di studio a Padova, approfondendo la gestione delle urgenze oftalmologiche, l’ambulatorio generale e l’interpretazione dell’imaging multimodale retinico a livello universitario e ospedaliero.</p>
+                </div>
               </div>
-              <div className="lg:col-span-7 space-y-3 lg:pl-6">
-                <h3 className="text-2xl font-bold text-blue-950">OCT, OCT-A e imaging multimodale</h3>
-                <p className="text-base text-slate-600 font-light leading-relaxed">
-                  L’imaging retinico permette di analizzare in modo dettagliato la struttura e la vascolarizzazione della retina, supportando diagnosi, monitoraggio e comunicazione del quadro clinico al paziente.
-                </p>
+
+              {/* Cronologia elegante a righe */}
+              <div className="border-t border-[#EAE5DC] pt-6 space-y-4">
+                {[
+                  { y: "2022", t: "Laurea con Lode in Medicina e Chirurgia", d: "Università degli Studi di Brescia. Studio delle patologie del segmento posteriore." },
+                  { y: "In corso", t: "Scuola di Specializzazione in Oftalmologia", d: "Università degli Studi di Padova. Attività clinica e diagnostica d'avanguardia." },
+                  { y: "Ricerca", t: "Biomarcatori e Neuroinfiammazione", d: "Attività scientifica incentrata sullo studio dei foci iper-riflettenti (HRF) nell'Atrofia Geografica tramite tecnologia di imaging OCT." }
+                ].map((item, idx) => (
+                  <div key={idx} className="grid sm:grid-cols-12 gap-1 text-xs border-b border-[#EAE5DC]/40 pb-3 last:border-0">
+                    <span className="sm:col-span-2 font-serif italic text-[#8C704B] font-medium">{item.y}</span>
+                    <div className="sm:col-span-10">
+                      <h4 className="font-serif font-medium text-[#0F1A2C]">{item.t}</h4>
+                      <p className="text-[11px] text-[#5C646C] font-light mt-0.5">{item.d}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Blocco 4: Oculistica Generale - Utilizzo di oftalmologia-pediatrica.jpeg in sezione secondaria */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center lg:flex-row-reverse">
-              <div className="lg:col-span-5 lg:order-2 rounded-2xl overflow-hidden shadow-sm aspect-video lg:aspect-4/3 bg-stone-200">
-                <img src="oftalmologia-pediatrica.jpeg" alt="Valutazione oculistica di screening" className="w-full h-full object-cover object-center filter saturate-90" />
+          </div>
+        </section>
+
+        {/* RICERCA E PUBBLICAZIONI - STILE RIVISTA ACCADEMICA DI ALTO LIVELLO */}
+        <section id="ricerca" className="py-20 border-t border-b border-[#EAE5DC] bg-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <div className="text-center max-w-xl mx-auto mb-12 space-y-2">
+              <span className="text-xs font-bold text-[#8C704B] uppercase tracking-widest">Attività Scientifica</span>
+              <h2 className="font-serif text-2xl font-light text-[#0F1A2C]">Contributi e Pubblicazioni Scelte</h2>
+              <p className="text-xs text-[#5C646C] font-light">Studio dei biomarcatori retinici applicati alla degenerazione maculare avanzata.</p>
+            </div>
+
+            <div className="divide-y divide-[#EAE5DC]">
+              {[
+                { t: "Small Hyperreflective Retinal Foci as in vivo imaging feature of resident microglia activation in geographic atrophy", j: "Experimental Eye Research, 2024", tag: "Atrofia Geografica" },
+                { t: "Microperimetry Sensitivity Correlates to Structural Macular Changes in Adolescents with Achromatopsia", j: "Journal of Clinical Medicine, 2024", tag: "Microperimetria" },
+                { t: "Small Hyperreflective Retinal Foci distribution in Inner and Outer Retina differs in different Geographic Atrophy Phenotypes", j: "EURETINA Congress, 2025", tag: "Abstract" },
+                { t: "Small Hyperreflective Retinal Foci as in vivo imaging feature of resident microglia activation in different geographic atrophy phenotypes", j: "ARVO Annual Meeting, 2025", tag: "Abstract" },
+                { t: "Inflammatory Hyperreflective Retinal Foci: An OCT Biomarker of Neuroinflammation in Geographic Atrophy", j: "Journal of Clinical Medicine, 2026", tag: "Articolo" }
+              ].map((pub, idx) => (
+                <div key={idx} className="py-5 first:pt-0 last:pb-0 grid sm:grid-cols-12 gap-2 items-baseline">
+                  <div className="sm:col-span-10 space-y-0.5">
+                    <h4 className="font-serif text-sm md:text-base text-[#0F1A2C] font-light leading-snug tracking-wide">{pub.t}</h4>
+                    <p className="text-[11px] text-[#8C704B] italic font-light">{pub.j}</p>
+                  </div>
+                  <div className="sm:col-span-2 sm:text-right">
+                    <span className="inline-block text-[8px] font-bold text-[#5C646C] uppercase tracking-widest bg-[#F5F2EB] px-2 py-0.5 border border-[#EAE5DC]">
+                      {pub.tag}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* NOTA DI SICUREZZA */}
+        <section className="py-12 bg-[#F5F2EB]/20">
+          <div className="max-w-3xl mx-auto px-6">
+            <div className="border-l border-[#8C704B] pl-4 py-1">
+              <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#8C704B] mb-1">Nota informativa di sicurezza</h4>
+              <p className="text-[11px] text-[#5C646C] font-light leading-relaxed">
+                In presenza di sintomi acuti o improvvisi quali improvviso calo della vista, distorsione significativa delle immagini (metamorfopsie), comparsa di una macchia scura fissa al centro del campo visivo o lampi di luce ripetuti, è fondamentale rivolgersi immediatamente a un servizio ospedaliero di Pronto Soccorso Oculistico.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTATTI - ESSENZIALE, MASSIMO CONTRASTO */}
+        <section id="contatti" className="py-20 bg-[#0F1A2C] text-[#FAF9F5]">
+          <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-12">
+            
+            <div className="md:col-span-5 space-y-4">
+              <span className="text-xs font-bold text-[#8C704B] uppercase tracking-widest block">Comunicazioni</span>
+              <h2 className="font-serif text-2xl font-light tracking-wide text-white">Richiesta Informazioni</h2>
+              <p className="text-xs text-[#A1AAB3] font-light leading-relaxed">
+                Per richieste informative di carattere generale, collaborazioni scientifiche o chiarimenti sulle disponibilità a Padova, è possibile compilare lo spazio a fianco.
+              </p>
+              <div className="text-[11px] text-[#A1AAB3] space-y-1 pt-4 font-light border-t border-[#2A3542]">
+                <p>Ufficio: Padova, Italia</p>
+                <p>Email professionale in fase di aggiornamento organizzativo</p>
               </div>
-              <div className="lg:col-span-7 lg:order-1 space-y-3 lg:pr-6">
-                <h3 className="text-2xl font-bold text-blue-950">Valutazione oculistica generale</h3>
-                <p className="text-base text-slate-600 font-light leading-relaxed">
-                  Visita oculistica, valutazione del segmento anteriore, pressione intraoculare, fundus oculi e inquadramento dei principali sintomi visivi o screening preventivi familiari.
-                </p>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 6. SEZIONE: RICERCA SCIENTIFICA */}
-      <section id="ricerca-scientifica" className="py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="space-y-4 text-center">
-            <span className="text-xs font-bold uppercase tracking-wider text-cyan-700 block">Attività Editoriale e Congressuale</span>
-            <h2 className="text-3xl font-bold text-blue-950 tracking-tight">Imaging retinico e biomarcatori nelle patologie maculari</h2>
-            <div className="w-12 h-0.5 bg-stone-200 mx-auto mt-4"></div>
-          </div>
-
-          <div className="text-base text-slate-600 leading-relaxed font-light space-y-4 max-w-3xl mx-auto text-justify">
-            <p>
-              L’attività scientifica del Dott. Parolini è orientata allo studio dell’imaging retinico e dei biomarcatori OCT nelle patologie degenerative della macula.
-            </p>
-            <p>
-              In particolare, il suo interesse riguarda i piccoli foci iper-riflettenti retinici, possibili indicatori di attivazione microgliale e neuroinfiammazione nell’atrofia geografica. Questo ambito di ricerca si inserisce nello studio delle forme avanzate di degenerazione maculare e nella ricerca di nuovi parametri utili alla caratterizzazione e al monitoraggio della malattia.
-            </p>
-            <p>
-              Le attività scientifiche comprendono pubblicazioni su riviste internazionali e contributi presentati in contesti congressuali nazionali e internazionali (quali *ARVO 2025* ed *EURETINA 2025*).
-            </p>
-          </div>
-
-          {/* Griglia a 4 Card di Ricerca Specifiche */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
-            {[
-              { t: "Atrofia geografica", d: "Studio in vivo delle varianti fenotipiche e dell'evoluzione del danno cellulare." },
-              { t: "Hyperreflective retinal foci", d: "Mappatura dei foci iper-riflettenti come indici di attivazione microgliale." },
-              { t: "OCT e OCT-A", d: "Estrazione di indici biometrici e vascolari strutturali senza mezzo di contrasto." },
-              { t: "Retinopatia diabetica", d: "Analisi precoce del microcircolo capillare e dei biomarcatori infiammatori." }
-            ].map((rcCard, rcIdx) => (
-              <div key={rcIdx} className="bg-stone-50 border border-stone-200 p-5 rounded-xl space-y-2">
-                <h4 className="font-bold text-sm text-blue-950 tracking-tight">{rcCard.t}</h4>
-                <p className="text-xs text-slate-500 font-light leading-relaxed">{rcCard.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. SEZIONE CTA INFORMATIVA FINALE */}
-      <section className="bg-blue-950 py-16 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">Pianificazione del monitoraggio diagnostico</h3>
-          <p className="text-sm text-slate-300 max-w-xl mx-auto font-light leading-relaxed">
-            Per informazioni relative alle modalità di visita o chiarimenti sugli esami di diagnostica retinica eseguiti a Padova, è possibile inoltrare una richiesta tramite il modulo.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-            <a href="#contatti" className="bg-cyan-700 text-white font-medium px-6 py-3 rounded-xl text-sm hover:bg-cyan-600 transition shadow-sm">
-              Richiedi informazioni per una visita
-            </a>
-            <a href="#interessi-clinici" className="bg-transparent border border-white/20 text-white font-medium px-6 py-3 rounded-xl text-sm hover:bg-white/10 transition">
-              Scopri le aree cliniche
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. SEZIONE CONTATTI REGOLAMENTARE */}
-      <section id="contatti" className="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 space-y-4">
-          <h2 className="text-3xl font-bold text-blue-950">Richiedi informazioni per una visita</h2>
-          <div className="bg-amber-50 border border-amber-200 text-amber-900 p-4 rounded-xl text-xs text-left leading-relaxed">
-            <strong>Nota informativa di sicurezza:</strong> Non inserire dati clinici sensibili o richieste urgenti nel modulo. In caso di calo visivo improvviso, dolore o sintomi acuti, rivolgersi immediatamente al Pronto Soccorso oculistico o al medico curante.
-          </div>
-        </div>
-
-        <form className="bg-white p-8 rounded-2xl border border-stone-200/80 shadow-xs space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Nome</label>
-              <input type="text" required className="w-full rounded-lg border-stone-300 shadow-xs focus:border-cyan-600 focus:ring-cyan-600 bg-stone-50 border p-3 text-sm" />
+            <div className="md:col-span-7">
+              <form className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="border-b border-[#2A3542] pb-1">
+                    <label className="block text-[9px] font-bold text-[#8C704B] uppercase tracking-wider mb-0.5">Nome</label>
+                    <input type="text" className="w-full bg-transparent text-white text-xs focus:outline-none focus:border-[#8C704B] font-light" />
+                  </div>
+                  <div className="border-b border-[#2A3542] pb-1">
+                    <label className="block text-[9px] font-bold text-[#8C704B] uppercase tracking-wider mb-0.5">Cognome</label>
+                    <input type="text" className="w-full bg-transparent text-white text-xs focus:outline-none focus:border-[#8C704B] font-light" />
+                  </div>
+                </div>
+                <div className="border-b border-[#2A3542] pb-1">
+                  <label className="block text-[9px] font-bold text-[#8C704B] uppercase tracking-wider mb-0.5">Email di contatto</label>
+                  <input type="email" className="w-full bg-transparent text-white text-xs focus:outline-none focus:border-[#8C704B] font-light" />
+                </div>
+                <div className="border-b border-[#2A3542] pb-1">
+                  <label className="block text-[9px] font-bold text-[#8C704B] uppercase tracking-wider mb-0.5">Messaggio (Escludere dati sensibili sanitari)</label>
+                  <textarea rows={2} className="w-full bg-transparent text-white text-xs focus:outline-none focus:border-[#8C704B] font-light resize-none"></textarea>
+                </div>
+                <div className="flex items-start gap-2">
+                  <input type="checkbox" id="privacy" className="mt-0.5 accent-[#8C704B]" required />
+                  <label htmlFor="privacy" className="text-[9px] text-[#A1AAB3] leading-tight font-light">
+                    Acconsento al trattamento dei dati esclusivamente per la gestione della presente richiesta informativa.
+                  </label>
+                </div>
+                <button type="submit" className="w-full bg-[#FAF9F5] text-[#0F1A2C] font-semibold text-xs uppercase tracking-widest py-2.5 hover:bg-[#8C704B] hover:text-white transition-colors">
+                  Invia Messaggio
+                </button>
+              </form>
             </div>
-            <div>
-              <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Cognome</label>
-              <input type="text" required className="w-full rounded-lg border-stone-300 shadow-xs focus:border-cyan-600 focus:ring-cyan-600 bg-stone-50 border p-3 text-sm" />
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Email</label>
-              <input type="email" required className="w-full rounded-lg border-stone-300 shadow-xs focus:border-cyan-600 focus:ring-cyan-600 bg-stone-50 border p-3 text-sm" />
-            </div>
-            <div>
-              <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Telefono</label>
-              <input type="tel" required className="w-full rounded-lg border-stone-300 shadow-xs focus:border-cyan-600 focus:ring-cyan-600 bg-stone-50 border p-3 text-sm" />
-            </div>
-          </div>
-          <div>
-            <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Motivo generico della richiesta</label>
-            <select className="w-full rounded-lg border-stone-300 shadow-xs focus:border-cyan-600 focus:ring-cyan-600 bg-stone-50 border p-3 text-sm text-slate-700">
-              <option>Informazioni su disponibilità visite</option>
-              <option>Quesiti generici sulla diagnostica OCT</option>
-              <option>Altro motivo informativo</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-xs font-semibold text-slate-600 uppercase mb-1">Messaggio</label>
-            <textarea rows={4} required className="w-full rounded-lg border-stone-300 shadow-xs focus:border-cyan-600 focus:ring-cyan-600 bg-stone-50 border p-3 text-sm" placeholder="Scrivi qui la tua richiesta..."></textarea>
-          </div>
-          
-          <div className="flex items-start gap-3">
-            <input type="checkbox" id="privacy-check" required className="mt-1 h-4 w-4 rounded border-stone-300 text-cyan-700 focus:ring-cyan-600" />
-            <label htmlFor="privacy-check" className="text-xs text-slate-500 leading-relaxed font-light">
-              Dichiaro di aver letto l’informativa privacy e acconsento al trattamento dei dati per la gestione della richiesta.
-            </label>
-          </div>
 
-          <button type="submit" className="w-full bg-blue-950 text-white font-medium py-4 rounded-xl hover:bg-cyan-800 transition tracking-wider text-xs uppercase">
-            Invia richiesta informativa
-          </button>
-        </form>
-      </section>
+          </div>
+        </section>
+      </main>
 
       {/* FOOTER */}
-      <footer className="bg-stone-900 py-12 text-center text-stone-400 text-xs border-t border-stone-800">
-        <p>&copy; {new Date().getFullYear()} Dott. Federico Parolini - Medico Chirurgo in Formazione Specialistica in Oftalmologia.</p>
-        <p className="mt-2 text-stone-500 font-light">Informazione sanitaria trasparente e non promozionale ai sensi della normativa vigente.</p>
+      <footer className="bg-[#09111C] text-[#A1AAB3] py-10 border-t border-[#182433]">
+        <div className="max-w-6xl mx-auto px-6 text-center md:text-left md:flex md:justify-between items-center text-[10px] font-light tracking-wide space-y-3 md:space-y-0">
+          <div>
+            <p className="font-serif text-xs text-white font-medium mb-0.5">Dott. Federico Parolini</p>
+            <p className="text-[#64707D]">Medico Chirurgo · Attività clinica e di ricerca in Oftalmologia</p>
+          </div>
+          <p className="text-[#64707D] max-w-md md:text-right leading-relaxed">
+            Le informazioni contenute in questo portale hanno scopo esclusivamente informativo e divulgativo scientifico. <br />
+            © {new Date().getFullYear()} Dott. Federico Parolini. Tutti i diritti riservati.
+          </p>
+        </div>
       </footer>
 
-    </main>
+    </div>
   );
 }
